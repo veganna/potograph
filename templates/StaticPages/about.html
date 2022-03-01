@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Acerca de Mí{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="about">
+    <div class="polaroid">
+        <img src="https://static.wixstatic.com/media/004c64_0db7a36541f049c4b5c71b10c1d1ce21~mv1.jpg/v1/fill/w_463,h_505,al_c,q_80,usm_0.66_1.00_0.01/004c64_0db7a36541f049c4b5c71b10c1d1ce21~mv1.webp">
+    </div>
+
+    <div class="about-text">
+        <h1>Cristian Esteves: Fotógrafo y Retratista profesional en Estudio</h1>
+        <h4>Fotógrafo exclusivo en: Universidad Internacional del Ecuador, Universidad de las Americas, Paraíso Infantil y en el Colegio Letort</h4>
+        <p>Me encanta hacer reportajes de bodas. ¡Nuestro mayor secreto es nuestra experiencia! </p>
+        <p>El cerebro es una computadora, acumula imágen tras imágen captadas por medio de los ojos, los órganos más especializados de nuestro organismo y es consciente de la película que se desarrolla a su alrededor.. </p>
+    </div>
+</div>
+<div class="about-me">
+    <h1 style="padding:1rem;">Estudio Fotográfico Esteves</h1>
+    <p>El Estudio Digital Esteves se ha especializado en capturar adecuada y oportunamente el color, forma, distancia, posición y movimiento de las escenas más importantes de la vida de nuestros clientes. </p>
+    <p>Con más de 20 años de experiencia ofrecemos una gran infraestructura, equipos digitales de tecnología vanguardista y talento humano. Conformado por 4 fotógrafos profesionales, 3 asistentes de fotografía e iluminación y 2 camarógrafos profesionales en video HD. Ofrecemos un alto compromiso y capacidad, dispuestos siempre a servirle de la mejor manera. 
+
+        Sesiones fotográficas para pasaporte, Visa, carnet y perfiles profesionales.
+    </p>
+</div>
+
+
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

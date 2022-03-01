@@ -1,0 +1,207 @@
+body{
+    background:var(--bg-color);
+}
+h1{
+    text-align:center;
+    font-weight: bold;
+    margin-bottom:2rem;
+    color:var(--prymary-color);
+}
+
+/* ----------Style Section Services Cards---------- */
+
+.card h3{
+    text-align: center;
+    padding-block:1rem;
+    color:var(--prymary-color);
+}
+
+.card-gold h3{
+    text-align: center;
+    padding-block: 1rem;
+    color:var(--text-color-secondary);
+}
+
+.cards{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap:2rem;
+    width: 100%;
+    padding: 4rem 2rem;
+    padding-top: 1rem;
+}
+
+
+.cards img{
+    width: 15rem;
+    aspect-ratio: 1;
+    border-radius: 1.75rem;
+}
+
+
+.cards li{
+    padding-block: .25rem;
+    font-size:.9rem;
+}
+
+
+.card li{
+    color:var(--text-color);
+}
+
+.card-gold li{
+    color:var(---text-color-secondary)
+}
+.card{
+    background:var(--text-color-secondary);
+    padding:1rem;
+    border-radius: 1.75rem;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    transition: .3s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+    height: 43rem;
+    width: 17rem;
+    position: relative;    
+}
+
+.card:hover{
+    transform: translateY(-2rem);
+}
+
+.card-gold{
+    background: var(--prymary-color);
+    padding:1rem;
+    border-radius: 1.75rem;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    transition: .3s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+    position:relative;
+    width: 17rem;
+    height: 43rem;
+    color:var(---text-color-secondary) !important;
+
+}
+
+.card-gold:hover{
+    transform: translateY(-2rem);
+}
+
+.card a{
+    position:absolute;
+    z-index: 2;
+    bottom: 2rem;
+    background:var(--prymary-color);
+    border-radius: 1.75rem;
+    padding: .5rem 1rem;
+    color:var(--text-color-secondary)
+}
+
+.card-gold a{
+    position:absolute;
+    z-index: 2;
+    bottom: 2rem;
+    background:var(--text-color-secondary);
+    border-radius: 1.75rem;
+    padding: .5rem 1rem;
+}
+
+.card-gold a,
+.card a{
+    transition: .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card-gold a:hover,
+.card a:hover{
+    transform: scale(.9);
+}
+
+
+/* ----------Style Section of Values---------- */
+
+.section-values{
+    display:flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap:1rem;
+    width: 100%;
+    padding: 3rem;
+    background: #303030;
+}
+
+.section-values div{
+    width: 20rem;
+    height: 22rem !important;
+    padding:1rem;
+    background: var(--text-color-secondary);
+    border-radius: 1rem;
+}
+
+.section-values h3{
+    color:var(--text-color);
+    font-weight: bold;
+    text-align: center;
+    padding-block: 1rem;
+}
+
+.section-values p{
+    color:var(--text-color);
+    font-family: "light-Montserrat";
+}
+
+.section-values img{
+    border-radius: 1rem 1rem 0 0;
+}
+
+.slider-services{
+    width: 100%;
+    text-align: center;
+    padding: 3rem 1rem;
+    background: url("https://hdwallsource.com/img/2019/3/vintage-camera-background-hd-wallpaper-68377-70703-hd-wallpapers.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+/* -----------Style Services Types----------- */
+
+.background{
+    background:var(--bg-color);
+}
+.services{
+    display: flex;
+    flex-wrap: wrap;
+    align-items:center;
+    background:var(--text-color);
+}
+
+#servicios-desktop{
+    display:none;
+}
+
+#servicios-mobile{
+    display:flex;
+    padding: 4rem 2rem;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    background: var(--bg-color-2);
+    flex-wrap: wrap;
+}
+.card-category{
+    width: 12rem;
+}
+
+@media screen and (min-width: 1000px){
+    #servicios-desktop{
+        display:block;
+    }
+    #servicios-mobile{
+        display:none;
+    }
+}

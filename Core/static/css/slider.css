@@ -1,0 +1,68 @@
+.slider-index{
+    width: 100%;
+    background: url("https://hdwallsource.com/img/2019/3/vintage-camera-background-hd-wallpaper-68377-70703-hd-wallpapers.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 2rem;
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    gap:0 2rem;
+}
+
+.slider-text-box-side{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: .75em;
+}
+
+.slider-text-box-side h1{
+    font-size: 3rem;
+}
+
+.slider-text-box-side p{
+    font-size: 1.5rem;
+}
+
+.btn,
+.slider-text-box-side a{
+    padding: .75rem 1.5rem;
+    background: var(--prymary-color);
+    color: var(--text-color-secondary);
+    width: fit-content;
+    border-radius: 1rem;
+    transition: .3s ease-in-out;
+    z-index: 2;
+}
+
+.btn:hover,
+.slider-text-box-side a:hover{
+    background: var(--text-color-secondary);
+    color: var(--text-color);
+}
+
+.slider-carrousel{
+    width: 50%;
+    display: grid;
+    place-items: center;
+}
+
+@media screen and (max-width: 1000px){
+    .slider-index{
+        padding: 1rem;
+        flex-direction: column;
+    }
+    .slider-text-box-side{
+        width: 100%;
+    }
+    .slider-carrousel{
+        width: 100%;
+    }
+}
+
+
+
+

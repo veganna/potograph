@@ -1,0 +1,150 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Services{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/Services.css' %}">
+<link rel="stylesheet" href="{% static 'css/categories.css' %}">
+{% endblock %}
+
+{% block content %}
+<!--Create of Gallery Services-->
+<div id="servicios-mobile">
+    {% for category in categories %}
+        <div class="card-category">
+            <a href="{% url 'Portifolio:categories' %}{{category.id}}">
+                <img src="{{ category.image.url }}" alt="{{ category.name }}">
+                <h3>{{ category.name }}</h3>
+            </a>
+        </div>
+    {% endfor %}
+</div>
+<div class="container" id="servicios-desktop">
+	<header class="c-header c-header--archive c-header--project-list">
+		<div class="c-mouse-vertical-carousel js-carousel u-media-wrapper u-media-wrapper--16-9">
+			<ul class="c-mouse-vertical-carousel__list js-carousel-list">
+                {% for category in categories %}
+				<li class="c-mouse-vertical-carousel__list-item js-carousel-list-item" data-item-id="{{ forloop.counter0 }}">
+                    <a href="{% url 'Portifolio:categories' %}{{category.id}}">
+                        <p class="c-mouse-vertical-carousel__eyebrow u-b4">
+                            <span>
+                                {{ category.id }}
+                            </span> Fotos
+						</p>
+                        
+						<p class="c-mouse-vertical-carousel__title u-a5">
+                            {{ category.name }}
+						</p>
+					</a>
+				</li>
+                {% endfor %}
+			</ul>
+            {% for category in categories %}
+			<i class="c-mouse-vertical-carousel__bg-img js-carousel-bg-img" style="background-image: url('{{category.image.url}}')"></i>
+			{% endfor %}
+            <i class="c-gradient-overlay"></i>
+		</div>
+	</header>
+</div>
+
+<!--Create Section of Services-->
+
+<div style="background:var(--bg-color); padding:2rem 0;">
+    <h1>Paquetes</h1>
+    <div class="cards">
+        <div class="card-gold">
+            <img src="https://static.wixstatic.com/media/004c64_c33149caf47546a6b69187f38d760977~mv2.jpg/v1/fill/w_185,h_145,al_c,q_80,usm_0.66_1.00_0.01/004c64_c33149caf47546a6b69187f38d760977~mv2.webp" alt="">
+            <h3>Básico</h3>
+            <ul>
+                <li><i class="fas fa-dot-circle"></i> 65 fotografías de alta calidad</li>
+                <li><i class="fas fa-dot-circle"></i> 8 fotografías artísticas impresas en papel brillante o mate (15 cm x 21 cm) o (13 cm x 18 cm)</li>
+                <li><i class="fas fa-dot-circle"></i> 1 CD personalizado con 80 imágenes del evento en máxima resolución</li>
+                <li><i class="fas fa-dot-circle"></i> 2 ampliaciones  (30 cm x 40 cm y 20 cm x 30 cm)</li>
+                <li><i class="fas fa-dot-circle"></i> Sesión fotográfica con iluminación profesional</li>
+            </ul>
+            <a href="{% url 'StaticPages:index' %}">INFORMACIÓN</a>
+        </div>
+
+        <div class="card">
+            <img src="https://static.wixstatic.com/media/004c64_124cf620173b45a39d6831309851b139~mv2.jpg/v1/fill/w_185,h_145,al_c,q_80,usm_0.66_1.00_0.01/004c64_124cf620173b45a39d6831309851b139~mv2.webp" alt="">
+            <h3>Económico</h3>
+            <ul>
+                <li><i class="fas fa-dot-circle"></i> 90 fotografías de máxima calidad</li>
+                <li><i class="fas fa-dot-circle"></i> 15 fotografías en diferentes locaciones en papel mate o brillante (13 cm x 18 cm) o (15 cm x 10 cm)</li>
+                <li><i class="fas fa-dot-circle"></i> 3 fotografías ampliadas (30 cm x 40 cm, 20 cm x 30 cm y 15 cm x 21 cm)</li>
+                <li><i class="fas fa-dot-circle"></i> Sesión fotográfica y recepción</li>
+            </ul>
+            <a href="{% url 'StaticPages:index' %}">INFORMACIÓN</a>
+        </div>
+        
+        <div class="card">
+            <img src="https://static.wixstatic.com/media/004c64_0823602f0b674320a084074365d6db6d~mv2.png/v1/fill/w_175,h_249,al_c,lg_1,q_85/004c64_0823602f0b674320a084074365d6db6d~mv2.webp" alt="">
+            <h3>Oro</h3>
+            <ul>
+                <li><i class="fas fa-dot-circle"></i> 300 fotografías en alta resolución</li>
+                <li><i class="fas fa-dot-circle"></i> 15 fotografías en diferentes locaciones en papel mate o brillante (15 cm x 21 cm o 13 cm x 18 cm)</li>
+                <li><i class="fas fa-dot-circle"></i> 1 Pendrive  con 200 imágenes digitales en alta resolución</li>
+                <li><i class="fas fa-dot-circle"></i> 1 FotoLibro 30cm x 30 cm de 20 páginas</li>
+                <li><i class="fas fa-dot-circle"></i> 2 fotografías ampliadas (30 cm x  40 cm)</li>
+                <li><i class="fas fa-dot-circle"></i> Sesión fotográfica y recepción</li>
+            </ul>
+            <a href="{% url 'StaticPages:index' %}">INFORMACIÓN</a>
+        </div>
+
+        <div class="card-gold">
+            <img src="https://static.wixstatic.com/media/004c64_fc7ac0941ecf467ab1388bdc31ce4ed5~mv2.jpg/v1/fill/w_185,h_145,al_c,q_80,usm_0.66_1.00_0.01/004c64_fc7ac0941ecf467ab1388bdc31ce4ed5~mv2.webp" alt="">
+            <h3>Plata</h3>
+            <ul>
+                <li><i class="fas fa-dot-circle"></i> 120 fotografías en alta resolución</li>
+                <li><i class="fas fa-dot-circle"></i> 12 fotografías en diferentes locaciones en papel mate o brillante (13 cm x 18 cm)</li>
+                <li><i class="fas fa-dot-circle"></i> 1 CD personalizado con todas las  imágenes del evento en alta resolución</li>
+                <li><i class="fas fa-dot-circle"></i> 2 fotografías ampliadas (30 cm x  40 cm)</li>
+                <li><i class="fas fa-dot-circle"></i> 15 imágenes digitales de cortesía</li>
+                <li><i class="fas fa-dot-circle"></i> Sesión fotográfica y recepción</li>
+            </ul>
+            <a href="{% url 'StaticPages:index' %}">INFORMACIÓN</a>
+        </div>
+
+    </div>
+</div>
+
+<div class="slider-services">
+    <h1 style="color:var(--text-color)">Por qué elegirnos?</h1>
+</div>
+
+<!--Create Section of Values-->
+
+<div class="section-values">
+    <div>
+        <img src="{% static 'images/pasion.jpg' %}" alt="">
+        <h3>Pasión</h3>
+        <p>La energía e impulso a obrar
+            da vigor a nuestro trabajo y
+            calidad a productos y servicios.
+        </p>
+    </div>
+    <div style="background:var(--prymary-color)">
+        <img src="{% static 'images/excelencia.jpg' %}" alt="">
+        <h3 style="color:var(--text-color-secondary)!important;">Excelencia</h3>
+        <p style="color:var(--text-color-secondary)!important; font-family:'Montserrat';">Nuestro combustible es la fé 
+            en lo que hacemos.
+            Nos enfocamos en la
+            mejora constante
+        </p>
+    </div>
+    <div>
+        <img src="{% static 'images/valores.jpg' %}" alt="">
+        <h3>Valores</h3>
+        <p>La claridad de nuestros valores permite productos y servicios
+        adaptados a sus necesidades.
+        </p>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+<script src="{% static 'js/twinmax.js' %}"></script>
+<script src="{% static 'js/categories.js' %}"></script>
+{% endblock %}

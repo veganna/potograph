@@ -1,0 +1,257 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+  Home
+{% endblock %}
+
+{% block head%}
+<link rel="stylesheet" href="{% static 'css/Index.css' %}">
+<link rel="stylesheet" href="{% static 'css/slider.css' %}">
+<link rel="stylesheet" href="{% static 'css/lightbox.css' %}" />
+<link rel="stylesheet" href="{% static 'css/carrousel.css' %}" />
+{% endblock %}
+
+{% block content %}
+
+<!-- Create Navbar -->
+
+<div class="slider-index">
+  <div class="slider-text-box-side">
+    <h1>Estudio Fotográfico Cristian Esteves</h1> 
+    <p>Fotógrafo Profesional de Bodas</p>
+    <a href="#servicios" class="btn-slider">Ver más</a>
+  </div>
+  <div class="slider-carrousel">
+    <div class="slider-container">
+
+      <div class="slider-content">
+        {% for item in hero_carrousel_list %}
+          <div class="slider-single">
+            <a href="{{item.image.url}}"  data-lightbox="roadtrip" title="Portifolio"><img class="slider-single-image" src="{{item.image.url}}" alt="{{item.title}}" /></a>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Create cards Services Black -->
+
+
+<h2 style="background:var(--bg-color); text-align:center; padding-top:2rem; color:var(--text-color);">Captura tus emociones…</h2>
+
+<div id="servicios" class="row">
+  <div class="card">
+    <h3>BÁSICO</h3>
+    <hr>
+    <div class="card-text">
+      <ul>
+        <li><i class="fas fa-dot-circle"></i> 65 fotografías de alta calidad</li>
+        <li><i class="fas fa-dot-circle"></i> 8 fotografías artísticas impresas en papel brillante o mate (15 cm x 21 cm) o (13 cm x 18 cm)</li>
+        <li><i class="fas fa-dot-circle"></i> 1 CD personalizado con 80 imágenes del evento en máxima resolución</li>
+        <li><i class="fas fa-dot-circle"></i> 2 ampliaciones  (30 cm x 40 cm y 20 cm x 30 cm)</li>
+        <li><i class="fas fa-dot-circle"></i> Sesión fotográfica con iluminación profesional</li>
+      </ul>
+    </div>
+    <a href="{% url 'Portifolio:categories' %}">INFORMACIÓN</a>
+  </div>
+
+<!-- Create Cards Services Gold -->
+  <div class="card gold">
+    <h3>ECONÓMICO</h3>
+    <hr>
+    <div class="card-text">
+      <ul>
+        <li><i class="fas fa-dot-circle"></i> 90 fotografías de máxima calidad</li>
+        <li><i class="fas fa-dot-circle"></i> 15 fotografías en diferentes locaciones en papel mate o brillante (13 cm x 18 cm) o (15 cm x 10 cm)</li>
+        <li><i class="fas fa-dot-circle"></i> 3 fotografías ampliadas (30 cm x 40 cm, 20 cm x 30 cm y 15 cm x 21 cm)</li>
+        <li><i class="fas fa-dot-circle"></i> Sesión fotográfica y recepción</li>
+      </ul>
+    </div>
+    <a href="{% url 'Portifolio:categories' %}">INFORMACIÓN</a>
+  </div>
+
+<!-- Create Cards Services Black -->
+  <div class="card">
+    <h3>PLATA</h3>
+    <hr>
+    <div class="card-text">
+      <ul>
+        <li><i class="fas fa-dot-circle"></i> 120 fotografías en alta resolución</li>
+        <li><i class="fas fa-dot-circle"></i> 12 fotografías en diferentes locaciones en papel mate o brillante (13 cm x 18 cm)</li>
+        <li><i class="fas fa-dot-circle"></i> 1 CD personalizado con todas las  imágenes del evento en alta resolución</li>
+        <li><i class="fas fa-dot-circle"></i> 2 fotografías ampliadas (30 cm x  40 cm)</li>
+        <li><i class="fas fa-dot-circle"></i> 15 imágenes digitales de cortesía</li>
+        <li><i class="fas fa-dot-circle"></i> Sesión fotográfica y recepción</li>
+      </ul>
+    </div>
+    <a href="{% url 'Portifolio:categories' %}">INFORMACIÓN</a>
+  </div>
+
+  <!-- Create Cards Services Gold -->
+  <div class="card gold">
+    <h3>ORO</h3>
+    <hr>
+    <div class="card-text">
+      <ul>
+        <li><i class="fas fa-dot-circle"></i> 300 fotografías en alta resolución</li>
+        <li><i class="fas fa-dot-circle"></i> 15 fotografías en diferentes locaciones en papel mate o brillante (15 cm x 21 cm o 13 cm x 18 cm)</li>
+        <li><i class="fas fa-dot-circle"></i> 1 Pendrive  con 200 imágenes digitales en alta resolución</li>
+        <li><i class="fas fa-dot-circle"></i> 1 FotoLibro 30cm x 30 cm de 20 páginas</li>
+        <li><i class="fas fa-dot-circle"></i> 2 fotografías ampliadas (30 cm x  40 cm)</li>
+        <li><i class="fas fa-dot-circle"></i> Sesión fotográfica y recepción</li>
+      </ul>
+    </div>
+    <a href="{% url 'Portifolio:categories' %}">INFORMACIÓN</a>
+  </div>
+</div>
+
+<!--Experience section-->
+
+<div class="experience-section">
+  <h1>20 AÑOS DE
+    <br>
+    PROBADA EXPERIENCIA
+  </h1>
+  <p>Tenemos el conocimiento que Ud. necesita</p>
+  <a class="btn" href="#about">Ver más</a>
+</div>
+
+<!--Sevice Section-->
+<div id="about" style="background: var(--bg-color-2);">
+  <h1 style="text-align:center; color:var(--text-color); padding:2rem 0 1rem;">Experiencia profesional</h1>
+  <div class="about-wrapper" style="padding-top:1rem !important;">
+    {% for item in experience %}
+      <div class="about-item">
+        <div class="about-item-img">
+          <img src="{{ item.image }}" alt="{{item.title}}">
+        </div>
+        <div class="about-item-text">
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.description }}</p>
+        </div>
+      </div>
+    {% endfor %}
+    <div class="card-service-father">
+        <div class="card-service">
+            <img src="{% static 'images/Bodas/B 8.jpg' %}" alt="">
+            <p>Bodas, 15 años, Infantil,
+                Familiar, Graduaciones, Eventos, Retratos, etc...
+            </p>
+        </div>
+        <p class="card-service-footer">
+            Las fotografías de los momentos más importantes de sus vidas tienen con nosotros  el mejor soporte profesional a los precios más competitivos del mercado.
+        </p>
+    </div>
+      
+    <div class="card-service-father">
+        <div class="card-service">
+            <img src="{% static 'images/Graduacciones/colegio-letort.jpg' %}" alt="Colegio">
+            <p>
+                Colegio Letort
+            </p>
+        </div>
+        <p class="card-service-footer">
+            Cada evento de esta gran institución ha tenido mi aporte gráfico.
+            Cada promoción de bachilleres tiene especial aporte de mi trabajo.
+        </p>
+    </div>
+
+    <div class="card-service-father">
+        <div class="card-service">
+            <img src="{% static 'images/Graduacciones/universidadedasamericas.jpg' %}" alt="">
+            <p>Universidad de las Americas
+            </p>
+        </div>
+
+        <p class="card-service-footer">
+            Emocionantes momentos captados por mi cámara
+        </p>
+    </div>
+
+    <div class="card-service-father">
+        <div class="card-service">
+            <img src="{% static 'images/Graduacciones/universityecuador.jpg' %}" alt="">
+            <p>Universidad Internacional del Ecuador
+            </p>
+        </div>
+
+        <p class="card-service-footer">
+          Reportero gráfico desde 1980 hasta la actualidad. Fotografía para Editoriales, Documentales de Investigación, Colegios, Universidades, Centros Educativos y Retratos en Estudio.
+        </p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<!-- Create Portfolio -->
+<div style="background: var(--bg-color);">
+  <h1 style="text-align:center; color:var(--text-color); padding:2rem 0 1rem;">Portifolio</h1>
+  <div class="portfolio" style="padding-top:1rem !important;">
+    {% for category in category_list %}
+    <div class="portfolio-item">
+      <img src="{{category.image.url}}" alt="{{ category.name }}">
+      <div class="hover-info">
+        <div class="top-hover">
+          <a href="{% url 'Portifolio:categories' %}{{category.id}}"><span>Ver Servicios</span><i class="fas fa-camera"></i></a> 
+          <a href="{{category.image.url}}"  data-lightbox="roadtrip" title="Portifolio"><span>Ampliar Imagen</span><i class="fas fa-search"></i></a>
+        </div>
+        <div class="bottom-hover">
+          <h4>{{category.name}}</h4>
+          <p>Portifolio</p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+
+<!-- Create Contact -->
+<div class="contact-section">
+  <div class="form-bg">
+      <form class="form">
+        <div class="row" style="background:var(--text-color-secondary); min-width: 10rem; max-width: 27rem;height:fit-content;flex-direction: column; border-radius: 2rem;">
+          <h2>Contact</h2>
+          <div class="input-box">
+            <i class="fa-solid fa-user"></i>
+            <input id="icon_name" type="name" class="validate" placeholder="Nombre">
+          </div>
+
+          <div class="input-box">
+            <i class="fa-solid fa-phone"></i>
+            <input id="icon_telephone" type="phone" class="validate" placeholder="Teléfono">
+          </div>
+
+          <div class="input-box">
+            <i class="fa-solid fa-at"></i>
+            <input id="icon_telephone" type="email" class="validate" placeholder="E-mail">
+          </div>
+
+          <div class="input-box">
+            <i class="fa-solid fa-camera"></i>
+            <textarea id="icon_telephone" type="text-area" class="validate" placeholder="Descricione"></textarea>
+          </div>
+          <input class="btn" type="submit" value="submit">
+        </div>
+
+      </form>
+
+      <div class="maps">
+        <div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=Am%C3%A9rica%202134%20y%20Bolivia%20Edificio%20gris%20con%20naranja%20Am%C3%A9rica%202134%20y,%20Bolivia,%20Quito,%20Ecuador&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://123movies-to.org">123movies</a><br><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}</style><a href="https://www.embedgooglemap.net"></a><style>.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div></div>
+      </div>
+  </div>
+</div>
+
+
+
+{% endblock %}
+
+{% block footer %}
+<script src="{% static 'js/lightbox.js' %}"></script>
+<script src="{% static 'js/carrousel.js' %}"></script>
+{% endblock %}

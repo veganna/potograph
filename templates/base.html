@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  {% block head %}{% endblock %}
+  <title>{% block title %}{% endblock %}</title>
+  <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+</head>
+
+
+<body>
+<header id="mobile-header">
+  <div class="humberbox" onclick="toggleModal()">
+    <div class="line1"></div>
+    <div class="line2"></div>
+    <div class="line3"></div>
+  </div>
+
+  <nav id="nav-mobile">
+    <ul class="social-icons">
+      <li><a target="_blank" href="https://wa.me/+593999033241" id="whats"><i class="fab fa-whatsapp"></i></a></li>
+      <li><a target="_blank" href="https://www.facebook.com/cristianoswaldoe"><i id="facebook" class="fab fa-facebook"></i></a></li>
+    </ul>
+    <ul id="menu" role="menu">
+      <li><a href="{% url 'StaticPages:index' %}">Inicio</a></li>
+      <li><a href="{% url 'StaticPages:about' %}">Sobre Mí</a></li>
+      <li><a href="{% url 'StaticPages:index' %}#about">Experiencia Profesional</a></li>
+      <li><a href="{% url 'Portifolio:categories' %}">Servicios</a></li>
+      <li><a href="{% url 'StaticPages:index' %}#contact">Contacto</a></li>
+    </ul>
+  </header>
+
+  <header id="desktop-header">
+    <a id="logo" href="{% url 'StaticPages:index' %}">Cristian Esteves <i class="far fa-dot-circle"></i></a>
+    <nav id="nav">
+      <ul id="menu" role="menu">
+        <li><a href="{% url 'StaticPages:index' %}">Inicio</a></li>
+        <li><a href="{% url 'StaticPages:about' %}">Sobre Mí</a></li>
+        <li><a href="{% url 'StaticPages:index' %}#about">Experiencia Profesional</a></li>
+        <li><a href="{% url 'Portifolio:categories' %}">Servicios</a></li>
+        <li><a href="{% url 'StaticPages:index' %}#contact">Contacto</a></li>
+      </ul>
+      <ul id="menu">
+        <li><a target="_blank" href="https://wa.me/+593999033241" id="whats"><i class="fab fa-whatsapp"></i>(+593) 99 9033 241</a></li>
+        <li><a target="_blank" href="https://www.facebook.com/cristianoswaldoe"><i id="facebook" class="fab fa-facebook"></i></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  {% block content %}
+  {% endblock %}
+
+<!--Create Footer-->
+<footer>
+  <div class="contact">
+    <ul>
+      <li class="contact-tittle">CONTACT</li>
+      <li><a id="hover-links" href="{% url 'StaticPages:index' %}">https://fotografiadebodasesteves.com/</a></li>
+      <li><a id="hover-links" href="mailto: macrovisionstudio@gmail.com">macrovisionstudio@gmail.com</a></li>
+      <li><a id="hover-links" href="tel: +593999033241">(+593) 99 903 3241</a></li>
+    </ul>
+  </div>
+
+  <div class="social-medias-text">
+    <ul>
+      <li class="contact-tittle">REDES SOCIALES</li>
+      <li><a href="https://instagram.com/cristianestevesfotografo">Instagram</a></li>
+      <li><a href="https://www.facebook.com/cristianoswaldoe">Facebook</a></li>
+    </ul>
+  </div>
+
+  <div class="social-medias-icon">
+    <ul>
+      <li id="hover-links"><a href="#"><i id="whats" class="fab fa-whatsapp"></i></a></li>
+      <li id="hover-links"><a href="https://www.facebook.com/cristianoswaldoe"><i id="facebook" class="fab fa-facebook"></i></a></li>
+    </ul>
+  </div>
+
+</footer>
+  <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+  <script src="{% static 'js/app.js' %}"></script>
+  {% block footer %}
+  {% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,89 @@
+
+
+.about{
+    display:flex;
+    gap:2rem;
+    align-items: center;
+    justify-content: center;
+    padding:4rem 2rem;
+    background: var(--bg-color);
+    flex-wrap: wrap;
+}
+.about h3{
+    font-weight:bold;
+    text-transform: capitalize;
+    font-family: 'Montserrat';
+}
+.about h4{
+    font-family: 'light-Montserrat';
+}
+
+.about p{
+    font-size: .9rem;
+    font-style: italic;
+}
+
+.about .polaroid{
+    width: 30%;
+    min-width: 20rem;
+    padding:1rem;
+    padding-bottom: 3rem;
+    background:var(--text-color);
+}
+.polaroid img{
+    width:100%;
+}
+
+.about .about-text{
+    display: flex;
+    flex-direction:column;
+    gap:1rem;
+    color: var(--text-color);
+    width: 60%;
+}
+
+.about-me{
+    background-image: url(https://cdn.pixabay.com/photo/2014/11/22/00/51/camera-541213__340.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color:var(--text-color);
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:1.5rem;
+    position: relative;
+    padding:4rem;
+}
+
+
+.about-me:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,.5);
+}
+
+@media screen and (max-width: 768px){
+    .about-me{
+        padding: 4rem 2rem;
+    }
+}
+ 
+.about-me h1,
+.about-me h3,
+.about-me p,
+.about-me a{
+    z-index: 2;
+}
+
+.about-me h3{
+    font-family: "Montserrat";
+}
+.about-me h1{
+    font-size: 4rem;
+}
